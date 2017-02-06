@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="head :: head"/>
+<body>
+<nav th:replace="header :: header (type='home')"/>
+
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-md-12">
+            <div class="jumbotron starter-template">
+                <h1>Book Manager</h1>
+                <p>Це проста і дуже виразна частина з великим екраном, для привертання додаткової уваги до вашої
+                    інформації.</p>
+                <p><a class="btn btn-primary btn-lg" href="/book/list" role="button">Go to book list</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

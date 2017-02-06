@@ -1,0 +1,15 @@
+body {
+    padding-top: 70px;
+}
+.container {
+    max-width: 900px;
+}
+.jumbotron {
+    background-position: 0% 25%;
+    background-image: url(https://placekitten.com/500/400);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-shadow: black 0.1em 0.1em;
+}
+

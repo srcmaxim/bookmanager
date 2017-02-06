@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="head :: head"/>
+<body>
+<nav th:replace="header :: header (type='booklist')"/>
+
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-md-12">
+            <div class="starter-template">
+                <h1>Book list</h1>
+
+                <table class="table table-hover" align="center">
+                    <tr>
+                        <th>ID</th>
+                        <th>TITLE</th>
+                        <th>AUTHOR</th>
+                        <th>PRICE</th>
+                        <th>DELETE</th>
+                        <th>EDIT</th>
+                    </tr>
+                    <tr th:each="book : ${bookList}">
+
+                        <td th:text="${book.id}">ID</td>
+                        <td><a th:text="${book.title}" th:href="@{'/book/' + ${book.id}}">TITLE</a></td>
+                        <td th:text="${book.author}">AUTHOR</td>
+                        <td th:text="${book.price}">PRICE</td>
+                        <td><a th:href="@{'/book/remove/' + ${book.id}}">DELETE</a></td>
+                        <td><a th:href="@{'/book/edit/' + ${book.id}}">EDIT</a></td>
+
+                    </tr>
+                </table>
+
+                <form action="#" th:action="@{/book/add}" th:object="${book}" method="post">
+                    <div class="form-group">
+                        <label for="title">Book's title:</label>
+                        <input type="text" class="form-control" id="title" th:field="*{title}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Book's author:</label>
+                        <input type="text" class="form-control" id="author" th:field="*{author}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Book's price:</label>
+                        <input type="text" class="form-control" id="price" th:field="*{price}"/>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

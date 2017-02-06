@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="head :: head"/>
+<body>
+<nav th:replace="header :: header (type='book')"/>
+
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-md-12">
+            <div class="starter-template">
+                <h1 th:text="@{'Book №' + ${book.id} + ': ' + ${book.title}}">Book title</h1>
+
+                <table class="table table-hover" align="center">
+                    <tr>
+                        <th>ID</th>
+                        <th>TITLE</th>
+                        <th>AUTHOR</th>
+                        <th>PRICE</th>
+                    </tr>
+                    <tr>
+                        <td th:text="${book.id}">ID</td>
+                        <td th:text="${book.title}">TITLE</td>
+                        <td th:text="${book.author}">AUTHOR</td>
+                        <td th:text="${book.price}">PRICE</td>
+                    </tr>
+                </table>
+
+                <p><a class="btn btn-primary btn-lg" href="/book/list" role="button">Go to book list</a></p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
